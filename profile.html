@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiX - Profile</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light-profile">
+
+    <!-- Top Right Brand Logo -->
+    <div class="top-right-logo">LogiX</div>
+
+    <div class="container min-vh-100 d-flex flex-column justify-content-between py-4">
+        
+        <!-- Top Section: Header -->
+        <div class="row">
+            <div class="col-12">
+                <h1 class="profile-header-title">Profile</h1>
+            </div>
+        </div>
+
+        <!-- Middle Section: Main Content Grid -->
+        <div class="row my-auto align-items-center">
+            <!-- Left Side: User Avatar & Info -->
+            <div class="col-lg-6 mb-4 mb-lg-0 text-start ps-md-4 ps-lg-5">
+                <div class="profile-avatar mb-3">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="user-details">
+                    <h3 class="user-info-text">Name: <span id="userName">Rahma</span></h3>
+                    <h3 class="user-info-text">phone: <span id="userPhone">+201222835768</span></h3>
+                    <h3 class="user-info-text">Email:<span id="userEmail">Rahma@gmail.com</span></h3>
+                </div>
+            </div>
+
+            <!-- Right Side: Grades & Results -->
+            <div class="col-lg-6 text-center text-lg-end pe-md-4 pe-lg-5">
+                <h2 class="grades-title mb-4">Grades</h2>
+                <div class="grades-list d-flex flex-column gap-3 align-items-center align-items-lg-end" id="gradesContainer">
+                    <!-- Dynamic Grades or Default Cards -->
+                    <div class="grade-card">Exam1 grade:100</div>
+                    <div class="grade-card">Exam2 grade:100</div>
+                    <div class="grade-card">Exam3 grade:100</div>
+                    <div class="grade-card">Exam4 grade:100</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section: Footer Actions -->
+        <div class="row align-items-center mt-4">
+            <div class="col-6 text-start">
+                <a href="login.html" class="back-arrow-dark" onclick="logoutUser()" aria-label="Logout">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                </a>
+            </div>
+            <div class="col-6 text-end">
+             <a href="exams.html" class="btn btn-dark-pill px-4 py-2">Start Exams</a>  
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadUserProfile();
+        });
+    </script>
+</body>
+</html>

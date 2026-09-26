@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-color: #2e6185;
+  --dark-blue: #0b2b3c;
+  --text-dark: #2c255b;
+  --bg-light: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==================================== */
+/* Background Image Configuration       */
+/* ==================================== */
+.bg-custom-theme {
+  background-color: var(--bg-light);
+  background-image: url('background.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Back Arrow (Top Left) */
+.top-back-arrow {
+  position: absolute;
+  top: 25px;
+  left: 35px;
+  color: var(--dark-blue);
+  font-size: 2.2rem;
+  text-decoration: none;
+  z-index: 100;
+  transition: transform 0.2s;
+}
+
+.top-back-arrow:hover {
+  color: #1a4267;
+  transform: translateX(-5px);
+}
+
+/* Brand Logo (Top Right) */
+.top-brand-logo {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  z-index: 100;
+}
+
+/* Titles */
+.main-title {
+  color: var(--text-dark);
+  font-size: 3.8rem;
+  font-weight: 800;
+}
+
+.exam-title-text, .section-title {
+  color: var(--text-dark);
+}
+
+/* Buttons Styling */
+.max-width-800 {
+  max-width: 800px;
+}
+
+.pill-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50px;
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 1.25rem;
+  border: none;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.pill-btn:hover {
+  background-color: #244d6b;
+  color: white;
+  transform: translateY(-2px);
+}
+/* ==================================== */
+/* Selected Option Styling              */
+/* ==================================== */
+.pill-btn.selected {
+  background-color: #e0f2fe !important;
+  color: var(--dark-blue) !important;
+  border: 2px solid var(--dark-blue) !important;
+  font-weight: 800;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(11, 43, 60, 0.2);
+}
+
+.btn-dark-pill {
+  background-color: var(--dark-blue);
+  color: white;
+  border-radius: 50px;
+  padding: 8px 36px;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-dark-pill:hover {
+  background-color: #051620;
+  color: white;
+}
+
+/* Screen Management */
+.screen {
+  display: none;
+}
+.screen.active {
+  display: block;
+}
+
+/* Custom Timer Box */
+.timer-box {
+  border: 1.5px solid #8c9ba5;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  display: inline-block;
+}
+
+/* Custom Progress Bar */
+.custom-progress {
+  height: 22px;
+  border-radius: 20px;
+  background-color: #b0c7d6;
+  overflow: hidden;
+}
+
+.custom-progress-bar {
+  background: linear-gradient(90deg, #1f4765 0%, #3e7fa8 100%);
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+  border-radius: 20px;
+}
+
+/* Navigation Controls */
+.nav-arrow {
+  font-size: 1.8rem;
+  color: var(--dark-blue);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px 15px;
+  transition: transform 0.2s;
+}
+
+.nav-arrow:hover {
+  transform: scale(1.2);
+}
+
+/* Result Card */
+.result-card {
+  max-width: 400px;
+  border-radius: 20px;
+}
+
+.score-display {
+  color: var(--primary-color);
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LogiX - Quiz App</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body class="bg-custom-theme">
+
+  <!-- ================= Back Arrow (Top Left) ================= -->
+  <a href="profile.html" class="top-back-arrow" aria-label="Go Back">
+    <i class="fa-solid fa-arrow-left-long"></i>
+  </a>
+
+  <!-- ================= Top Right Brand Logo ================= -->
+  <div class="top-brand-logo">LogiX</div>
+
+  <div class="container min-vh-100 d-flex flex-column justify-content-between py-4">
+    
+    <!-- ================= 1. HOME SCREEN (STEM & Tech Exams) ================= -->
+    <div id="home-screen" class="screen active my-auto text-center">
+      <h1 class="fw-bold mb-5 main-title">STEM & Tech Exams</h1>
+
+      <div class="row g-4 justify-content-center max-width-800 mx-auto">
+        <div class="col-md-6">
+          <button class="pill-btn d-flex align-items-center justify-content-center gap-2" onclick="startQuiz('Programming')">
+            <i class="fa-solid fa-code"></i> Programming
+          </button>
+        </div>
+        <div class="col-md-6">
+          <button class="pill-btn d-flex align-items-center justify-content-center gap-2" onclick="startQuiz('Math')">
+            <i class="fa-solid fa-pi"></i> Math
+          </button>
+        </div>
+        <div class="col-md-6">
+          <button class="pill-btn d-flex align-items-center justify-content-center gap-2" onclick="startQuiz('Physics')">
+            <i class="fa-solid fa-atom"></i> Physics
+          </button>
+        </div>
+        <div class="col-md-6">
+          <button class="pill-btn d-flex align-items-center justify-content-center gap-2" onclick="startQuiz('Biology')">
+            <i class="fa-solid fa-dna"></i> Biology
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 2. QUIZ SCREEN ================= -->
+    <div id="quiz-screen" class="screen my-auto">
+      <div class="row align-items-center mb-4">
+        <div class="col-6">
+          <h3 id="exam-title" class="fw-bold m-0 exam-title-text">Exam name</h3>
+          <div class="mt-2">
+            <span class="timer-box" id="timer-display">10:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-8">
+          <div class="custom-progress">
+            <div id="progress-bar" class="custom-progress-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question Content -->
+      <div class="text-center mb-4">
+        <h2 class="fw-bold section-title" id="question-number">Question: 1</h2>
+        <h4 class="mt-3 fw-semibold" id="question-text">Loading question...</h4>
+      </div>
+
+      <!-- Options Grid -->
+      <div class="row g-3 justify-content-center max-width-600 mx-auto mb-5" id="options-container">
+        <!-- Dynamically rendered options -->
+      </div>
+
+      <!-- Navigation Controls -->
+      <div class="d-flex justify-content-between align-items-center mt-auto px-md-5">
+        <button id="prev-btn" class="nav-arrow" onclick="navigateQuestion(-1)"><i class="fa-solid fa-arrow-left"></i></button>
+        
+        <button id="save-btn" class="btn btn-dark-pill px-4" onclick="saveAnswer()">save</button>
+        <button id="submit-btn" class="btn btn-dark-pill px-4 d-none" onclick="submitQuiz()">Submit</button>
+
+        <button id="next-btn" class="nav-arrow" onclick="navigateQuestion(1)"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- ================= 3. RESULT SCREEN ================= -->
+    <div id="result-screen" class="screen text-center my-auto">
+      <h2 class="fw-bold mb-3">Quiz Completed!</h2>
+      <div class="card p-4 shadow-sm mx-auto result-card">
+        <h4 class="text-muted">Your Score</h4>
+        <h1 class="display-3 fw-bold my-3 score-display" id="score-text">0 / 10</h1>
+        <p id="result-feedback" class="lead"></p>
+        <button class="btn btn-dark-pill mt-3" onclick="location.reload()">Take Another Test</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
